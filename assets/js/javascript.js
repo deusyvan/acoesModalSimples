@@ -1,9 +1,9 @@
-function editar(){
-	
+function editar(id){
+	alert("usuario id: " +id );
 	$('#modal').modal('show');
 		
 }
 
-function excluir(){
+function excluir(id){
 	$('#modal').modal('show');
 }
