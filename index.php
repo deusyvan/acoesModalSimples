@@ -12,9 +12,9 @@ $usuarios = $sql->fetchAll();
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery.min.js" ></script>
-		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/bootstrap.min.js" ></script>
-		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/javascript.js" ></script>	
+		<script type="text/javascript" src="assets/js/jquery.min.js" ></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="assets/js/javascript.js" ></script>	
 	</head>
 	
 	<body>
@@ -26,8 +26,8 @@ $usuarios = $sql->fetchAll();
         		<td><?php echo $usuario['email']; ?></td>
         		<td><?php echo $usuario['senha']; ?></td>
         		<td>
-        			<a href="javascript:;" >Editar</a>
-        			<a href="javascript:;" >Excluir</a>
+        			<a href="javascript:;" onclick="editar()">Editar</a>
+        			<a href="javascript:;" onclick="excluir()">Excluir</a>
         		</td>
         	</tr>
         	<?php endforeach; ?>
