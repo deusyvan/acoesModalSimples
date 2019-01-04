@@ -21,7 +21,7 @@ $usuarios = $sql->fetchAll();
 		<h1>Usuários</h1>
         <table border="1" width="500">
         	<?php foreach ($usuarios as $usuario): ?>
-        	<tr data-nome="" data-email="" data-senha="" data-id="" >
+        	<tr data-nome="<?php echo $usuario['nome']; ?>" data-email="<?php echo $usuario['email']; ?>" data-senha="<?php echo $usuario['senha']; ?>" data-id="<?php echo $usuario['id']; ?>" >
         		<td><?php echo $usuario['nome']; ?></td>
         		<td><?php echo $usuario['email']; ?></td>
         		<td><?php echo $usuario['senha']; ?></td>
