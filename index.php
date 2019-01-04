@@ -33,6 +33,28 @@ $usuarios = $sql->fetchAll();
         	<?php endforeach; ?>
         </table>
         
+        <div id="modal-editar" class="modal fade" role="dialog">
+        	<div class="modal-dialog">
+        		<div class="modal-content">
+        			<div class="modal-body">
+        				<form method="POST">
+                       		Nome: <br/>
+                       		<input type="text" name="nome"/><br/><br/>
+                       		Email: <br/>
+                       		<input type="text" name="email"/><br/><br/>
+                       		Senha: <br/>
+                       		<input type="text" name="senha"/><br/><br/>
+                       		
+                       		<input type="hidden" name="id"/>
+                       		
+                       		<input type="submit" value="Salvar" />
+                       	
+                       	</form>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        
         <div id="modal" class="modal fade" role="dialog">
         	<div class="modal-dialog">
         		<div class="modal-content">
@@ -40,5 +62,6 @@ $usuarios = $sql->fetchAll();
         		</div>
         	</div>
         </div>
+        
 	</body>
 </html>
