@@ -15,28 +15,14 @@ function editar(obj){
 	$('#modal-editar').find('.modal-body').find('input[name=senha]').val(senha);
 	$('#modal-editar').find('.modal-body').find('input[name=id]').val(id);
 	
+	//Depois acionamos uma ação submit, que vai executar uma função que recebe e
+	$('#modal').find('.modal-body').find('form').on('submit', salvar);
 	
-	$.ajax({
-		url:'editar.php',
-		type:'POST',
-		data:{id:id},
-		beforeSend:function(){
-			//Antes de fazer a requisição ajax com html vamos fazer algo antes
-			$('#modal').find('.modal-body').html('Carregando ...');
-			$('#modal').modal('show');
-		},
-		success:function(html){
-			//Pegando o html para colocar dentro do modal (na tela)
-			$('#modal').find('.modal-body').html(html);
-			
-			//Procuramos dentro do modal-body um form que está lá dentro
-			//Depois acionamos uma ação submit, que vai executar uma função que recebe e
-			$('#modal').find('.modal-body').find('form').on('submit', salvar);
-			$('#modal').modal('show');
-		}
-		
-	});
-		
+	//Mostra o modal
+	$('#modal-editar').modal('show');
+	
+	//Não precisamos mais do arquivo editar.php
+	
 }
 
 function salvar(e){
