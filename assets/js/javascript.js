@@ -47,6 +47,10 @@ function salvar(e){
 }
 
 function excluir(id){
-	$('#modal').find('.modal-body').html('Tem certeza que deseja excluir o id: '+id+'?<br/><button>Sim</button><button>Não</button>');
+	$('#modal').find('.modal-body').html('Tem certeza que deseja excluir o id: '+id+'?<br/><button>Sim</button><button onclick="fechar()">Não</button>');
 	$('#modal').modal('show');
+}
+
+function fechar(){
+	$('#modal').modal('hide');
 }
