@@ -40,8 +40,8 @@ function salvar(e){
 		success:function(){
 			//Mais uma função após ter sido salvo no banco de dados.
 			alert("Dados alterados com sucesso");
-			//fechando o modal
-			$('#modal').modal('hide');
+			//Atualiza a tela
+			window.location.href = window.location.href;
 		}
 	});
 }
