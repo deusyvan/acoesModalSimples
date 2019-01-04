@@ -24,7 +24,11 @@ function editar(id){
 				var senha = $(this).find('input[name=senha]').val();
 				
 				//Fazer nova requisição ajax para enviar a um arquivo que vai salvar no banco de dados
-				
+				$.ajax({
+					url:'salvar.php',
+					type:'POST',
+					data:{nome:nome, email:email, senha:senha}
+				});
 				
 			});
 			$('#modal').modal('show');
