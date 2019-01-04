@@ -21,12 +21,12 @@ $usuarios = $sql->fetchAll();
 		<h1>Usuários</h1>
         <table border="1" width="500">
         	<?php foreach ($usuarios as $usuario): ?>
-        	<tr>
+        	<tr data-nome="" data-email="" data-senha="" data-id="" >
         		<td><?php echo $usuario['nome']; ?></td>
         		<td><?php echo $usuario['email']; ?></td>
         		<td><?php echo $usuario['senha']; ?></td>
         		<td>
-        			<a href="javascript:;" onclick="editar('<?php echo $usuario['id']; ?>')">Editar</a>
+        			<a href="javascript:;" onclick="editar(this)">Editar</a>
         			<a href="javascript:;" onclick="excluir('<?php echo $usuario['id']; ?>')">Excluir</a>
         		</td>
         	</tr>
