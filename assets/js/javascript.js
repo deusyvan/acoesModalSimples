@@ -8,6 +8,14 @@ function editar(obj){
 	var senha = tr.attr('data-senha');
 	var id = tr.attr('data-id');
 	
+	//Agora vamos preencher o formulário que já temos
+	//Procuramos o modal-editar, dentro dele procuramos o modal-body e procuramos o name e colocamos seus valores
+	$('#modal-editar').find('.modal-body').find('input[name=nome]').val(nome);
+	$('#modal-editar').find('.modal-body').find('input[name=email]').val(email);
+	$('#modal-editar').find('.modal-body').find('input[name=senha]').val(senha);
+	$('#modal-editar').find('.modal-body').find('input[name=id]').val(id);
+	
+	
 	$.ajax({
 		url:'editar.php',
 		type:'POST',
