@@ -1,4 +1,13 @@
-function editar(id){
+function editar(obj){
+	//Vamos selecionar o objeto e apartir dele o tr mais proximo. o Jquery vai voltando
+	var tr = $(obj).closest('tr');
+	
+	//A partir dele vamos pegar as informações
+	var nome = tr.attr('data-nome');
+	var email = tr.attr('data-email');
+	var senha = tr.attr('data-senha');
+	var id = tr.attr('data-id');
+	
 	$.ajax({
 		url:'editar.php',
 		type:'POST',
