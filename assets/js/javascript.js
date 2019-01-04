@@ -47,10 +47,29 @@ function salvar(e){
 }
 
 function excluir(id){
-	$('#modal').find('.modal-body').html('Tem certeza que deseja excluir o id: '+id+'?<br/><button>Sim</button><button onclick="fechar()">Não</button>');
+	$('#modal').find('.modal-body').html('Tem certeza que deseja excluir o id: '+id+'?<br/><button onclick="excluirUsuario('+id+')">Sim</button><button onclick="fechar()">Não</button>');
 	$('#modal').modal('show');
 }
 
 function fechar(){
 	$('#modal').modal('hide');
 }
+
+function excluirUsuario(id){
+	$.ajax({
+		url:'excluir.php',
+		type:'POST',
+		data:{id:id},
+		success:function(){
+			//Mais uma função após ter sido salvo no banco de dados.
+			alert("Usuário excluído com sucesso");
+			//Atualiza a tela
+			window.location.href = window.location.href;
+		}
+	});
+}
+
+
+
+
+
