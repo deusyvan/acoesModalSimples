@@ -22,12 +22,19 @@ function editar(id){
 				var nome = $(this).find('input[name=nome]').val();
 				var email = $(this).find('input[name=email]').val();
 				var senha = $(this).find('input[name=senha]').val();
+				var id = $(this).find('input[name=id]').val();
 				
 				//Fazer nova requisição ajax para enviar a um arquivo que vai salvar no banco de dados
 				$.ajax({
 					url:'salvar.php',
 					type:'POST',
-					data:{nome:nome, email:email, senha:senha}
+					data:{nome:nome, email:email, senha:senha, id:id},
+					success:function(){
+						//Mais uma função após ter sido salvo no banco de dados.
+						alert("Dados alterados com sucesso");
+						//fechando o modal
+						$('#modal').modal('hide');
+					}
 				});
 				
 			});

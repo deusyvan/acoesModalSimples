@@ -15,6 +15,9 @@ if($sql->rowCount() > 0){
    		<input type="text" name="email" value="<?php echo $info['email']; ?>"/><br/><br/>
    		Senha: <br/>
    		<input type="text" name="senha" value="<?php echo $info['senha']; ?>"/><br/><br/>
+   		
+   		<input type="hidden" name="id" value="<?php echo $info['id']; ?>"/>
+   		
    		<input type="submit" value="Salvar" />
    	
    	</form>
