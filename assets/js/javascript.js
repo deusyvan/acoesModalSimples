@@ -1,5 +1,5 @@
 function editar(obj){
-	//Vamos selecionar o objeto e apartir dele o tr mais proximo. o Jquery vai voltando
+	//Vamos selecionar o objeto e apartir dele o tr mais proximo. o Jquery vai voltando com o closest
 	var tr = $(obj).closest('tr');
 	
 	//A partir dele vamos pegar as informações
@@ -16,7 +16,7 @@ function editar(obj){
 	$('#modal-editar').find('.modal-body').find('input[name=id]').val(id);
 	
 	//Depois acionamos uma ação submit, que vai executar uma função que recebe e
-	$('#modal').find('.modal-body').find('form').on('submit', salvar);
+	$('#modal-editar').find('.modal-body').find('form').on('submit', salvar);
 	
 	//Mostra o modal
 	$('#modal-editar').modal('show');
@@ -50,7 +50,9 @@ function salvar(e){
 }
 
 function excluir(id){
-	$('#modal').find('.modal-body').html('Tem certeza que deseja excluir o id: '+id+'?<br/><button onclick="excluirUsuario('+id+')">Sim</button><button onclick="fechar()">Não</button>');
+	$('#modal').find('.modal-body').html('Tem certeza que deseja excluir o id: '
+			+id+'?<br/><button onclick="excluirUsuario('
+			+id+')">Sim</button><button onclick="fechar()">Não</button>');
 	$('#modal').modal('show');
 }
 
@@ -65,7 +67,7 @@ function excluirUsuario(id){
 		data:{id:id},
 		success:function(){
 			//Mais uma função após ter sido salvo no banco de dados.
-			alert("Usuário excluído com sucesso");
+			alert("Usuário excluído com sucesso no ajax");
 			//Atualiza a tela
 			window.location.href = window.location.href;
 		}
